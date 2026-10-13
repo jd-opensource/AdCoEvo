@@ -1,0 +1,10 @@
+auctionnet_sim_env:
+  n_accounts: 3
+  units_per_account: 4
+  n_steps: 48
+  pv_num: 500000
+  seed: 20270001
+  profile: sparse
+  competitor_mode: native
+  tcpa_max_adjust: 8
+  our_indices: [10, 12, 13, 14, 17, 18, 19, 23, 33, 34, 36, 37]

@@ -1,0 +1,39 @@
+# ---- external dependencies (clone locally, never commit) ----
+AuctionNet/
+models/
+*.zip
+*.tar.gz
+
+# ---- experiment outputs ----
+runs/
+dist/
+eval/
+
+# ---- data ----
+data/*.jsonl
+data/*.parquet
+data/raw/
+data/auctionnet_profiles/*.csv
+data/auctionnet_profiles/manifest.json
+
+# ---- model / checkpoint artifacts ----
+*.ckpt
+*.safetensors
+*.bin
+outputs/
+checkpoints/
+
+# ---- secrets ----
+.env
+llm.md
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ---- misc ----
+.DS_Store
+*.log

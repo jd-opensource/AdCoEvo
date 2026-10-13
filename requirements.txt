@@ -1,0 +1,26 @@
+# AdCoEvo dependencies (python >= 3.10)
+#
+# Select torch and vllm versions compatible with your GPU and CUDA environment.
+
+# ---- LLM client (OpenAI-compatible; local vLLM or any gateway) ----
+openai
+
+# ---- Inference server ----
+vllm
+
+# ---- Training (LoRA / QLoRA) ----
+torch
+transformers
+peft
+accelerate
+
+# ---- Data / config ----
+numpy
+pyyaml
+scipy             # AuctionNet BiddingEnv imports scipy.stats
+pandas            # AuctionNet OnlineLP competitor imports pandas
+gin-config        # AuctionNet BiddingEnv imports gin
+
+# ---- Runtime helpers ----
+langgraph>=1.2,<2  # period execution graph shared by collector and evaluator
+requests           # scripts/online_rl/launch.py vLLM readiness poll, collector HTTP calls

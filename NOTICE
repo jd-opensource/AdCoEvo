@@ -1,0 +1,59 @@
+AdCoEvo — three-agent ad delivery co-evolution
+==============================================
+
+Copyright 2026 AdCoEvo contributors
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this project except in compliance with the License. You may obtain a copy of the
+License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+The full license text is in the LICENSE file.
+
+
+Third-party components
+----------------------
+
+AuctionNet
+  This repository does not package the full AuctionNet simulator, its original
+  datasets, or its model checkpoints. A few compatibility helpers and native
+  simulator parameters in env/auctionnet_sim_env.py are adapted from
+  AuctionNet's run/run_test.py and Controller/Controller.py, including winner
+  selection, over-cost handling, and default advertiser configurations.
+  AuctionNet is licensed under Apache License 2.0. Users must obtain the full
+  simulator separately from its official repository and comply with its license:
+
+      https://github.com/alimama-tech/AuctionNet
+
+  The default location expected by this code is:
+
+      AuctionNet/
+
+  and can be overridden with the ADCOEVO_AUCTIONNET environment variable.
+
+  AuctionNet's simulated auction, PV generation, exposure and conversion sampling,
+  and its native heterogeneous competitor strategies are used as an external
+  dependency. The auction mechanics themselves are not reimplemented here.
+
+Base language model
+  LoRA adapters and evaluation require a base causal language model of the user's
+  choice. Model weights are not distributed with this repository; users must obtain
+  them and comply with their license terms. Configure the path with ADCOEVO_BASE_MODEL.
+
+Datasets
+  No SFT data, trajectory dumps, experiment results or checkpoints are included.
+  The market profiles in configs/auctionnet_profiles.yaml are ready to use:
+  Sparse records AuctionNet's native simulator settings, while General uses
+  parameters calibrated from public General data. The preparation script can
+  regenerate profile assets from archives the user provides.
+
+Value metric
+  ADV in this project is a proxy computed on top of AuctionNet auction outputs
+  (predicted conversion value times the fixed business target CPA). It is not real
+  advertiser revenue or GMV.

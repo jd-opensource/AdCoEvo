@@ -1,0 +1,32 @@
+# Sparse records AuctionNet's native simulator values; General is calibrated
+# from the public period 7-8 data. Runtime uses absolute parameters without
+# rescaling budgets, CPA constraints, or PV count.
+default_profile: sparse
+
+profiles:
+  sparse:
+    calibration_id: aigb-sparse-period-7-8-v1
+    source_archive_sha256: a2395fea5868ff4084f72870a87f9a1c169b5742e66675bc1c6f21a2003ec733
+    description: Native AuctionNet simulator values, recorded as the default sparse profile.
+    pvalue_mean_base: 0.0005
+    conversion_keep_rate: 1.0
+    budgets: [2900, 4350, 3000, 2400, 4800, 2000, 2050, 3500, 4600, 2000, 2800, 2350, 2050, 2900, 4750, 3450, 2000, 3500, 2200, 2700, 3100, 2100, 4850, 4100, 2000, 4800, 3050, 4250, 2850, 2250, 2000, 3900, 2000, 3250, 4450, 3550, 2700, 2100, 4650, 2000, 3400, 2650, 2300, 4100, 4800, 4450, 2000, 2050]
+    cpa_constraints: [100, 70, 90, 110, 60, 130, 120, 80, 70, 130, 100, 110, 120, 90, 60, 80, 130, 80, 110, 100, 90, 120, 60, 70, 120, 60, 90, 70, 100, 110, 130, 80, 120, 90, 70, 80, 100, 110, 60, 130, 90, 100, 110, 80, 60, 70, 130, 120]
+
+  general:
+    calibration_id: aigb-general-period-7-8-v1
+    source_archive_sha256: 4bf1738caf328e6704aeed6a0ef928903033f527b95774abd5bb79dcba7c505f
+    description: General simulator profile calibrated from public General period 7-8 data.
+    pvalue_mean_base: 0.005
+    conversion_keep_rate: 1.0
+    budgets: [750, 1350, 2250, 900, 750, 600, 5250, 5100, 1500, 2700, 2850, 11850, 1350, 2250, 4350, 1950, 8250, 9750, 600, 1650, 5250, 1950, 2250, 900, 3750, 2700, 1500, 5250, 2400, 4500, 3750, 2850, 6750, 600, 5550, 1800, 4200, 1050, 5700, 450, 600, 750, 3600, 2400, 5400, 2100, 5550, 450]
+    cpa_constraints: [8, 7, 7, 10, 9, 10, 8, 7, 7, 8, 8, 8, 10, 7, 8, 7, 7, 8, 9, 7, 7, 6, 8, 10, 9, 8, 7, 9, 7, 8, 7, 6, 8, 10, 7, 9, 7, 11, 8, 12, 11, 10, 7, 9, 7, 9, 8, 12]
+
+  extra_sparse_feedback_stress:
+    calibration_id: aigb-sparse-extra-feedback-stress-57-of-1512-v1
+    source_archive_sha256: a2395fea5868ff4084f72870a87f9a1c169b5742e66675bc1c6f21a2003ec733
+    description: Synthetic stress test on top of official Sparse; not an official AuctionNet track.
+    pvalue_mean_base: 0.0005
+    conversion_keep_rate: 0.037698412698412696
+    budgets: [2900, 4350, 3000, 2400, 4800, 2000, 2050, 3500, 4600, 2000, 2800, 2350, 2050, 2900, 4750, 3450, 2000, 3500, 2200, 2700, 3100, 2100, 4850, 4100, 2000, 4800, 3050, 4250, 2850, 2250, 2000, 3900, 2000, 3250, 4450, 3550, 2700, 2100, 4650, 2000, 3400, 2650, 2300, 4100, 4800, 4450, 2000, 2050]
+    cpa_constraints: [100, 70, 90, 110, 60, 130, 120, 80, 70, 130, 100, 110, 120, 90, 60, 80, 130, 80, 110, 100, 90, 120, 60, 70, 120, 60, 90, 70, 100, 110, 130, 80, 120, 90, 70, 80, 100, 110, 60, 130, 90, 100, 110, 80, 60, 70, 130, 120]
